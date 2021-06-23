@@ -1,8 +1,8 @@
 
-
-# brute .py
+ 
 
 ``` python
+# brute  py
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         for a in list(range(0,len(nums)-1)):
@@ -13,8 +13,9 @@ class Solution:
  
           
 ```
-# brute cpp
+
 ``` cpp
+// brute cpp
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
@@ -31,4 +32,27 @@ public:
     }
 };
 ```
+
+
+``` cpp
+// cpp use map
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        map<int,int> m;
+        for(int i=0;i< nums.size(); i++){
+            if(m.find(target - nums[i]) != m.end()){
+                return {i,m[target - nums[i]]};
+            }else{
+                m[ nums[i]] = i ;
+            }
+        }
+        
+        return {0,0};
+    }
+};
+```
+
+
+
 
