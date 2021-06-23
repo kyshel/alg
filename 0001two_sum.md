@@ -1,6 +1,6 @@
 
 
-# submit1
+# brute .py
 
 ``` python
 class Solution:
@@ -13,5 +13,22 @@ class Solution:
  
           
 ```
-
+# brute cpp
+``` cpp
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        int len = nums.size();
+        vector<int> out(2);
+        for(int i=0;i!=len-1;i++){
+            for(int j=i+1;j!=len;j++){
+                if(nums[i]+nums[j] == target){cout << i << " " << j << "\n"; out[0] = i; out[1] = j ;return out; }
+            }
+            
+        }
+        
+        return out;
+    }
+};
+```
 
