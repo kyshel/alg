@@ -53,6 +53,18 @@ public:
 };
 ```
 
+``` python
+# py use dict
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        d = {}
+        for i in list(range(len(nums))):
+            delta = target - nums[i]
+            if delta in d:
+                return [i, d[delta]]
+            else:
+                d[nums[i]]=i
 
+```
 
 
