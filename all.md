@@ -58,4 +58,42 @@ public:
 ```
 
 
+little improve
+``` cpp
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {   
+        int inc=0,a=0,b=0,c=0 ;
+
+        ListNode *head = new ListNode();
+        ListNode *p=head;
+        while(l1 or l2 or inc){  
+            a=l1?l1->val:0;
+            b=l2?l2->val:0;
+           
+            if(l1) l1=l1->next;
+            if(l2) l2=l2->next;
+            
+            c=a+b+inc;
+            inc=c/10;
+            
+            p->next  = new ListNode(c%10) ;
+            p=p->next;
+        }
+        
+        return head->next;
+    }
+};
+```
+
 
